@@ -1,16 +1,39 @@
 ---
-
+import AppLayout from "../layouts/app.astro";
+import Box from "../components/box.astro";
+import Info from "../components/info.astro";
+import Hr from "../components/hr.astro";
+import Career from "../components/career.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<AppLayout>
+  <main class="py-8">
+    <div class="flex-1 flex flex-col md:flex-row md:space-x-6 space-y-4">
+      <div>
+        <Info />
+      </div>
+
+      <div class="flex flex-col">
+        <div class="grid grid-cols-2 gap-4">
+          <Box class="col-span-2 py-4 px-4">
+            <p class="text-sm" slot="title">CedricVanhaverbeke/README.md</p>
+            <div class="pb-4">
+              <span class="text-xl font-bold">Howdy 👋</span>
+              <Hr />
+            </div>
+            <p>
+              My name is Cedric. I'm a motivated software engineer from Belgium.
+              I like searching for a solutions that are both technically elegant
+              and maintainable in the long term. Programming and technology
+              aside, you'll often see me running, cycling or swimming. I also
+              like playing the guitar. I'll probably never say no to a good
+              stout 🍺.
+            </p>
+          </Box>
+
+          <Career class="col-span-2" />
+        </div>
+      </div>
+    </div>
+  </main>
+</AppLayout>

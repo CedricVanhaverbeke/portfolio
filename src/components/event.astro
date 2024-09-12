@@ -1,0 +1,24 @@
+---
+
+---
+
+<div class="flex flex-col ml-2 border-l-2 pl-2 py-6">
+  <div class="flex flex-row -translate-x-[1.3rem] space-x-4">
+    <div
+      class="bg-gray-100 rounded-full flex items-center justify-center w-6 h-6"
+    >
+      <slot name="icon" />
+    </div>
+    <div class="text-xl">
+      <slot name="title" />
+    </div>
+  </div>
+
+  <div class="flex flex-row ml-5">
+    <slot />
+  </div>
+
+  <div class="flex flex-row space-x-2 ml-5">
+    <slot name="footer" />
+  </div>
+</div>

@@ -1,0 +1,10 @@
+---
+const { active, href } = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={["pb-2", active && "font-bold border-b-2 border-red-500"]}
+>
+  <slot />
+</a>

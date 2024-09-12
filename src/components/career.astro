@@ -1,0 +1,128 @@
+---
+import Month from "./month.astro";
+import Event from "./event.astro";
+import Js from "./tag/js.astro";
+import Ts from "./tag/ts.astro";
+import Go from "./tag/go.astro";
+import Php from "./tag/php.astro";
+import Python from "./tag/python.astro";
+import Csharp from "./tag/csharp.astro";
+import Java from "./tag/java.astro";
+const { class: className } = Astro.props;
+import { Icon } from "astro-icon/components";
+---
+
+<div class:list={["flex-1 w-full", className]}>
+  <p class="text-xl">Career</p>
+  <Month>
+    <span class="" slot="month">August</span>
+    <span class="" slot="year">2023</span>
+  </Month>
+
+  <Event>
+    <Icon slot="icon" name="mdi:briefcase-outline" />
+    <span slot="title">Fullstack Developer focused on backend @ Dropon</span>
+    <div>
+      At Dropon I'm currently working primarily on the backend and frequent
+      contributions to the frontend. Daily responsibilities include maintaining
+      and expanding platform capabilities, handling third-party integrations,
+      and supporting the overall technical operations of the company.
+    </div>
+    <div slot="footer" class="flex flex-row space-x-2 flex-wrap mt-4">
+      <Ts />
+      <Go />
+    </div>
+  </Event>
+
+  <Month>
+    <span class="" slot="month">February</span>
+    <span class="" slot="year">2022</span>
+  </Month>
+
+  <Event>
+    <Icon slot="icon" name="mdi:briefcase-outline" />
+    <span slot="title">Fullstack Developer @ Be-Mobile</span>
+    <div>
+      Migrated a Symfony web application to a Vue3 frontend, dockerized 4411 for
+      local development with plans for Kubernetes deployment and wrote my first
+      Go microservices. Additionally, I integrated the system with new parking
+      providers.
+    </div>
+    <div slot="footer" class="flex flex-row space-x-2 flex-wrap mt-4">
+      <Js />
+      <Ts />
+      <Php />
+      <Go />
+    </div>
+  </Event>
+
+  <Month>
+    <span class="" slot="month">May</span>
+    <span class="" slot="year">2021</span>
+  </Month>
+
+  <Event>
+    <Icon slot="icon" name="mdi:briefcase-outline" />
+    <span slot="title">Fullstack Developer @ Waylay</span>
+    <div>
+      Developed and maintained a Node.js microservice for creating serverless
+      functions using Openfaas, MinIO, Fastify, MikroORM, and other
+      technologies, along with a frontend application in React.
+    </div>
+    <div slot="footer" class="flex flex-row space-x-2 flex-wrap mt-4">
+      <Js />
+      <Ts />
+    </div>
+  </Event>
+
+  <Month>
+    <span class="" slot="month">October</span>
+    <span class="" slot="year">2020</span>
+  </Month>
+
+  <Event>
+    <Icon slot="icon" name="mdi:briefcase-outline" />
+    <span slot="title">Frontend Developer @ FTRPRF</span>
+    <div>Worked on a multitude of projects in React.</div>
+    <div slot="footer" class="flex flex-row space-x-2 flex-wrap mt-4">
+      <Js />
+      <Java />
+    </div>
+  </Event>
+
+  <Month>
+    <span class="" slot="year">2020</span>
+  </Month>
+
+  <Event>
+    <Icon slot="icon" name="mdi:account-school-outline" />
+    <span slot="title"
+      >Master's degree Industrial Engineering: Computer Science</span
+    >
+    <div>
+      During my studies I did an Internship at In The Pocket and a Master's
+      thesis on researching, creation and comparing of a supervised and
+      unsupervised approach to music prediction.
+
+      <div slot="footer" class="flex flex-row space-x-2 flex-wrap mt-4">
+        <Js />
+        <Python />
+      </div>
+    </div>
+  </Event>
+
+  <Month>
+    <span class="" slot="year">2017</span>
+  </Month>
+
+  <Event>
+    <Icon slot="icon" name="mdi:account-school-outline" />
+    <span slot="title">Bachelors's degree Applied Information Technology</span>
+    <div>Learned the basics and more.</div>
+    <div slot="footer" class="flex flex-row space-x-2 flex-wrap mt-4">
+      <Js />
+      <Csharp />
+      <Java />
+    </div>
+  </Event>
+</div>

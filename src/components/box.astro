@@ -1,0 +1,16 @@
+---
+const { class: className } = Astro.props;
+---
+
+<div class:list={["border w-full py-2 px-2 rounded-md", className]}>
+  {
+    Astro.slots.has("title") || Astro.slots.has("action") ? (
+      <div class="flex justify-between mb-4">
+        <slot name="title" />
+        <slot name="action" />
+      </div>
+    ) : null
+  }
+  <slot />
+  <slot name="footer" />
+</div>
