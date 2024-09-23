@@ -8,8 +8,9 @@ import Php from "./tag/php.astro";
 import Python from "./tag/python.astro";
 import Csharp from "./tag/csharp.astro";
 import Java from "./tag/java.astro";
-const { class: className } = Astro.props;
 import { Icon } from "astro-icon/components";
+
+const { class: className } = Astro.props;
 ---
 
 <div class:list={["flex-1 w-full", className]}>
@@ -28,7 +29,7 @@ import { Icon } from "astro-icon/components";
       and expanding platform capabilities, handling third-party integrations,
       and supporting the overall technical operations of the company.
     </div>
-    <div slot="footer" class="flex flex-row space-x-2 flex-wrap mt-4">
+    <div slot="footer" class="flex flex-row flex-wrap mt-4 gap-2">
       <Ts />
       <Go />
     </div>
@@ -48,7 +49,7 @@ import { Icon } from "astro-icon/components";
       Go microservices. Additionally, I integrated the system with new parking
       providers.
     </div>
-    <div slot="footer" class="flex flex-row space-x-2 flex-wrap mt-4">
+    <div slot="footer" class="flex flex-row flex-wrap mt-4 gap-2">
       <Js />
       <Ts />
       <Php />
@@ -69,7 +70,7 @@ import { Icon } from "astro-icon/components";
       functions using Openfaas, MinIO, Fastify, MikroORM, and other
       technologies, along with a frontend application in React.
     </div>
-    <div slot="footer" class="flex flex-row space-x-2 flex-wrap mt-4">
+    <div slot="footer" class="flex flex-row gap-2 flex-wrap mt-4">
       <Js />
       <Ts />
     </div>
@@ -84,7 +85,7 @@ import { Icon } from "astro-icon/components";
     <Icon slot="icon" name="mdi:briefcase-outline" />
     <span slot="title">Frontend Developer @ FTRPRF</span>
     <div>Worked on a multitude of projects in React.</div>
-    <div slot="footer" class="flex flex-row space-x-2 flex-wrap mt-4">
+    <div slot="footer" class="flex flex-row flex-wrap mt-4">
       <Js />
       <Java />
     </div>
@@ -104,7 +105,7 @@ import { Icon } from "astro-icon/components";
       thesis on researching, creation and comparing of a supervised and
       unsupervised approach to music prediction.
 
-      <div slot="footer" class="flex flex-row space-x-2 flex-wrap mt-4">
+      <div slot="footer" class="flex flex-row gap-2 flex-wrap mt-4">
         <Js />
         <Python />
       </div>
@@ -119,7 +120,7 @@ import { Icon } from "astro-icon/components";
     <Icon slot="icon" name="mdi:account-school-outline" />
     <span slot="title">Bachelors's degree Applied Information Technology</span>
     <div>Learned the basics and more.</div>
-    <div slot="footer" class="flex flex-row space-x-2 flex-wrap mt-4">
+    <div slot="footer" class="flex flex-row gap-2 flex-wrap mt-4">
       <Js />
       <Csharp />
       <Java />
