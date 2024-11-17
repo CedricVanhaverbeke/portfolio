@@ -16,6 +16,17 @@ const { class: className } = Astro.props;
 <div class:list={["flex-1 w-full", className]}>
   <p class="text-xl">Career</p>
   <Month>
+    <span class="" slot="month">October</span>
+    <span class="" slot="year">2024</span>
+  </Month>
+
+  <Event>
+    <Icon slot="icon" name="mdi:trending-up" />
+    <span slot="title">Team Lead @ Dropon</span>
+    <div>Got promoted to team lead of the engineering team.</div>
+  </Event>
+
+  <Month>
     <span class="" slot="month">August</span>
     <span class="" slot="year">2023</span>
   </Month>

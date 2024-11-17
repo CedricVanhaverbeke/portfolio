@@ -6,6 +6,10 @@ import Header from "../components/header.astro";
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/github-markdown-css/github-markdown-light.css"
+    />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Cedric Vanhaverbeke</title>
@@ -13,7 +17,7 @@ import Header from "../components/header.astro";
   <body>
     <div class="w-screen h-screen flex flex-col items-center overflow-x-hidden">
       <Header />
-      <div class="flex-1 px-3 sm:px-6 lg:px-12 xl:px-24 2xl:px-44">
+      <div class="flex-1 px-3 sm:px-6 lg:px-12 xl:px-24 2xl:px-44 w-full">
         <slot />
       </div>
       <div></div>
