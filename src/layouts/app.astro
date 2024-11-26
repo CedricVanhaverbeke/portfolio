@@ -15,9 +15,11 @@ import Header from "../components/header.astro";
     <title>Cedric Vanhaverbeke</title>
   </head>
   <body>
-    <div class="w-screen h-screen flex flex-col items-center overflow-x-hidden">
-      <Header />
-      <div class="flex-1 px-3 sm:px-6 lg:px-12 xl:px-24 2xl:px-44 w-full">
+    <Header />
+    <div
+      class="w-screen h-screen px-6 flex flex-col items-center overflow-x-hidden"
+    >
+      <div class="flex-1 px-3 max-w-[90rem] mx-auto w-full">
         <slot />
       </div>
     </div>

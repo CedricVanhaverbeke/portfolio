@@ -11,7 +11,9 @@ const { class: className } = Astro.props;
     className,
   ]}
 >
-  <nav class="flex justify-between translate-y-[0.1rem] w-full items-center">
+  <nav
+    class="max-w-[90rem] mx-auto flex justify-between translate-y-[0.1rem] items-center"
+  >
     <Tab class="text-lg sm:text-2xl" active href="/">~/</Tab>
     <div class="flex flex-row space-x-4">
       <Tab href="https://github.com/CedricVanhaverbeke">
