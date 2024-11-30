@@ -8,6 +8,12 @@ description: It took the world by storm. Now it's everywhere, and I kinda hate i
 
 <style>
 img { width: 30%; text-align: center; margin: auto; padding: 2em 0 }
+
+@media only screen and (max-width: 768px) {
+img {
+width: 50%;
+}
+}
 article * {
     font-size: 1.2em;
 }
