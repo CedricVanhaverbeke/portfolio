@@ -1,0 +1,21 @@
+---
+import AppLayout from "./app.astro";
+import Hr from "../components/hr.astro";
+const { frontmatter } = Astro.props;
+const options = { year: "numeric", month: "long", day: "numeric" };
+const publishedDate = new Date(frontmatter.pubDate).toLocaleDateString(
+  "en-US",
+  options,
+);
+---
+
+<AppLayout>
+  <article class="markdown-body mt-10">
+    <span class="opacity-50 w-full">{publishedDate}</span>
+    <h1 class="text-2xl !mt-0 w-full">{frontmatter.title}</h1>
+    <slot />
+  </article>
+  <Hr class="my-4" />
+  <a href="/">More opinions? I don't have any, sorry.</a>
+  <div class="mb-8"></div>
+</AppLayout>
