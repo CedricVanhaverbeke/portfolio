@@ -5,6 +5,7 @@ const posts = await Astro.glob("../pages/blog/posts/*.md");
 
 const options = { year: "numeric", month: "long", day: "numeric" };
 const formatDate = (d: string) => {
+  //@ts-ignore
   return new Date(d).toLocaleDateString("en-US", options);
 };
 ---

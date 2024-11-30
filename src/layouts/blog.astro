@@ -5,6 +5,7 @@ const { frontmatter } = Astro.props;
 const options = { year: "numeric", month: "long", day: "numeric" };
 const publishedDate = new Date(frontmatter.pubDate).toLocaleDateString(
   "en-US",
+  //@ts-ignore
   options,
 );
 ---
