@@ -156,9 +156,6 @@ However, I didn't want to focus too much on the UI side so I picked a few UI ele
 - An overview of the training
 - The power output from the trainer
 
-The final result looks like this:
-
-
 There's a lot of UI libraries to choose from. However, given the need I needed to update
 UI elements every second, I opted for a game engine called `ebiten`. It's known for its 
 simplicity and it's really fun to create a layout. One of the cool things about `ebiten` 
