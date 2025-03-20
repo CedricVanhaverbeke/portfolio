@@ -97,20 +97,17 @@ An indoor trainer is able to set an exact wattage. Let's communicate with our sm
 | *My bike on the smart trainer. And a cat* |
 
 
-
-
 A smart trainer essentially is a Bluetooth device that broadcasts which services it offers. 
 Since I would be both reading and writing power data to the trainer, I figured I'd only need one service.
 However, after experimenting this proved to not be the case. I actually needed both the `Power Service` 
 and the `Fitness Machine Service`. The services can be accessed by their `uuids`.
 
-You cannot communicate directly with a Bluetooth service though. A service contains multiple Bluetooth characteristics.
-Those characteristics can be used to communicate with the device. At this point, it becomes more of a 
-`find-the-right-uuid` kind of game.
+You cannot communicate directly with a Bluetooth service though. For this purpose
+there are multiple Bluetooth characteristics. So after playing the `find-the-right-uuid`-game,
+I could finally discover all Bluetooth devices near me with smart trainer capabilities.
 
-After connecting to the Bluetooth device with an awesome package called `tinygo/x/bluetooth`, verifying 
-if it has the right Bluetooth service and finally checking if the two characteristics I want are available
-it was time to communicate.
+After connecting to my trainer with an awesome package called `tinygo/x/bluetooth`. it's time 
+to start communicating.
 
 If a characteristic implements following interface, it can be used to read and write data in my game.
 
