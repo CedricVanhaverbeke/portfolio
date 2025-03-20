@@ -43,6 +43,8 @@ table * {
 }
 </style>
 
+> Disclaimer: This project is open source and can be found [here](https://github.com/CedricVanhaverbeke/go-train).
+
 
 _I have been using Zwift and MyWhoosh to cycle at home during the colder winter months. I always wondered
 how those platforms actually worked. Somehow my smart trainer was controlled by that software over Bluetooth.
@@ -233,7 +235,7 @@ was ridden, what your speed was at any time in the workout, what the elevation
 level was and so on.
 
 So far, I only had power output at a given time. Generating a route is easy, I could 
-just create a route with a tool like `https://gpx.studio/app`. The difficult part is 
+just create a route with a tool like [GPX studio](https://gpx.studio/app). The difficult part is 
 knowing the location on the route given a certain power output. I needed to find a way
 to figure out what speed I was traveling at given a start point and a power output.
 This results only in a snapshot of course. I reasoned repeating this calculation every second
