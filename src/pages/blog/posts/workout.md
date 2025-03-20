@@ -154,8 +154,8 @@ However, I didn't want to focus too much on the UI side so I picked a few UI ele
 - An overview of the training
 - The power output from the trainer
 
-There's a lot of UI libraries to choose from. However, given the need I needed to update
-UI elements every second, I opted for a game engine called `ebiten`. It's known for its 
+There's a lot of UI libraries to choose from. However, given the need to update
+UI elements every second to show the passing of time, I opted for a game engine called `ebiten`. It's known for its 
 simplicity and it's really fun to create a layout. One of the cool things about `ebiten` 
 is the possibility to overlay UI elements on the screen, as if they are widgets. So you
 could combine a training with watching a movie, great stuff!
@@ -167,18 +167,16 @@ interface:
 type Game interface {
 	Update() error
 	Draw(screen *Image)
-	Layout(outsideWidth, outsideHeight int) (screenWidth, screenHeight int)
 }
 ```
 
-The three functions are responsible for different aspects of the game. `Update` is a 
-function you can use to update the game state. Every iteration in the game loop
-will trigger the `Update` and `Draw` method. `Update` is responsible for updating
-the game state, and `Draw` will draw the game according to the state. The `Layout` 
-function determines the bounding box of the game.
+The three functions are responsible for different aspects of the game. 
+Every iteration in the game loop will trigger the `Update` and `Draw` method. 
+`Update` is responsible for updating the game state, and `Draw` will draw 
+the game according to the state. 
 
-You can of course put all sprites of the game in the same function, but I took 
-a more hierarchical approach. A game consists of sprites, that all implement the 
+You can of course draw all sprites of the game in the same function, but I took 
+a more hierarchical approach. A game consists of sprites that all implement the 
 `Game` interface, and the game will just call every sprite in the iteration.
 For example: 
 
@@ -190,7 +188,8 @@ func (g *game) Draw(screen *ebiten.Image) {
 }
 ```
 
-A sprite may be implemented this way:
+A progress line sprite may be implemented this way:
+
 ```go
 func NewProgressLine(x int, y int, width int) *progressLine {
 	return &progressLine{
@@ -202,11 +201,11 @@ func NewProgressLine(x int, y int, width int) *progressLine {
 
 func (p *progressLine) Update(state state.GameState) {
 	step := float64(p.width) / workout.Duration(state.Training).Seconds()
-	p.x += step
+	p.x += step // <-- Update the state
 }
 
 func (p *progressLine) Draw(screen *ebiten.Image) {
-	vector.DrawFilledRect(
+	vector.DrawFilledRect( // <-- draw according to the state
 		screen,
 		float32(p.x),
 		float32(screen.Bounds().Dy()-100),
@@ -218,9 +217,6 @@ func (p *progressLine) Draw(screen *ebiten.Image) {
 }
 ```
 
-In this way, it's even possible to have one parent sprite, that triggers subsprites.
-Fun was had!
-
 ## Generating the GPX file
 
 This part seems easy. And I agree, I had all elements to just start a workout 
@@ -231,10 +227,12 @@ level was and so on.
 
 So far, I only had power output at a given time. Generating a route is easy, I could 
 just create a route with a tool like [GPX studio](https://gpx.studio/app). The difficult part is 
-knowing the location on the route given a certain power output. I needed to find a way
+knowing the location on the route given a certain power output. 
+
+I needed to find a way
 to figure out what speed I was traveling at given a start point and a power output.
-This results only in a snapshot of course. I reasoned repeating this calculation every second
-would give me a good result.
+This results only in a snapshot of the speed of course. I reasoned repeating this calculation every second
+would give me a good enough result.
 
 This sounds a lot like a simple physics exercise, and it actually is. Without going too much into
 detail I needed a few other variables before I could calculate the speed:
