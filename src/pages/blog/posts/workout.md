@@ -53,7 +53,7 @@ Turns out it isn't, and I had a lot of fun making it._
 
 | ![A wokrout in action](../../../assets/strava.jpg) |
 |:--:| 
-| *My first custom route, can you spot my name?* |
+| *My first custom route. Can you spot my name?* |
 
 
 ## The goal
