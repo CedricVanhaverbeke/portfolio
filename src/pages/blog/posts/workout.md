@@ -6,12 +6,9 @@ description: "Building a DIY Smart Trainer Controller in Go"
 ---
 
 <style>
-table img { width: 50%; text-align: center; margin: auto; padding: 2em 0 }
-img { width: 80%; text-align: center; margin: auto; padding: 2em}
-
 @media only screen and (max-width: 768px) {
-img {
-width: 80%;
+table img {
+width: 100% !important;
 }
 }
 article * {
@@ -22,13 +19,15 @@ table {
     border: 0 !important;
 }
 
+table img {
+width: 50%;
+}
+
+
 th, td, tr {
     border: 0 !important;
 }
 
-table img {
-    margin-bottom: -2em !important;
-}
 
 
 ul li {
@@ -95,6 +94,8 @@ An indoor trainer is able to set an exact wattage. Let's communicate with our sm
 | ![A wokrout in action](../../../assets/smarttrainer.jpg) |
 |:--:| 
 | *My bike on the smart trainer. And a cat* |
+
+
 
 
 A smart trainer essentially is a Bluetooth device that broadcasts which services it offers. 
