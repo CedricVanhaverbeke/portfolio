@@ -10,11 +10,9 @@ import Header from "../components/header.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Cedric Vanhaverbeke</title>
   </head>
-  <body>
+  <body class="overflow-x-hidden">
     <Header />
-    <div
-      class="w-screen h-screen px-6 flex flex-col items-center overflow-x-hidden"
-    >
+    <div class="w-screen h-screen px-6 flex flex-col items-center">
       <div class="flex-1 px-3 max-w-[70rem] mx-auto w-full">
         <slot />
       </div>
